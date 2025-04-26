@@ -36,8 +36,8 @@ jobs:
 
       - name: Generate Proto files
         run: |
-          chmod +x generate_proto.sh
-          ./generate_proto.sh
+          chmod +x ./scripts/generate_proto.sh
+          ./scripts/generate_proto.sh
 
       - name: Commit changes
         run: |
@@ -45,4 +45,10 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add address/*.pb.go company/*.pb.go customer/*.pb.go employee/*.pb.go
           git commit -m "Generate protobuf code" || echo "No changes to commit"
-          git push origin master # Or your main branch
+          
+          # Update the "origin" URL to use authentication
+          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          
+          # Push changes
+          git push origin ${{ github.ref_name }}
+
