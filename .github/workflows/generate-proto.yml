@@ -1,0 +1,48 @@
+name: Generate Proto
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  generate:
+    name: Generate Proto Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.22' # Or your Go version
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Needed for git rev-parse
+
+      - name: Install protobuf compiler
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y protobuf-compiler
+
+      - name: Install Go plugins
+        run: |
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+
+      - name: Generate Proto files
+        run: |
+          chmod +x generate_proto.sh
+          ./generate_proto.sh
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add address/*.pb.go company/*.pb.go customer/*.pb.go employee/*.pb.go
+          git commit -m "Generate protobuf code" || echo "No changes to commit"
+          git push origin master # Or your main branch

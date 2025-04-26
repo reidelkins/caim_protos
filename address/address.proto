@@ -1,0 +1,20 @@
+syntax = "proto3";
+package crm;
+
+option go_package = "github.com/reidelkins/caim_protos/address";
+
+// Address message to represent company address details.
+message Address {
+    // The street address.
+    string street = 1;
+    // Apartment number or other specific information
+    string street2 = 2;
+    // The city.
+    string city = 3;
+    // The state or province.
+    string state = 4;
+    // The postal or zip code.
+    string zip_code = 5;
+    // The country.
+    string country = 6;
+}

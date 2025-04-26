@@ -1,0 +1,21 @@
+syntax = "proto3";
+package crm;
+
+option go_package = "github.com/reidelkins/caim_protos/employee";
+
+import "google/protobuf/timestamp.proto";
+
+// Employees (of Our Customers)
+message Employee {
+    int32 employee_id = 1;
+    int32 company_id = 2;  // Foreign Key to Companies
+    string name = 3;
+    string email = 4;
+    string phone_number = 5;
+    string title = 6;
+    bool caim_account = 7;
+    string caim_role = 8;
+    bool is_active = 9;
+    google.protobuf.Timestamp created_at = 10;
+    google.protobuf.Timestamp updated_at = 11;
+}

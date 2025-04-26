@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package crm;
+
+option go_package = "github.com/reidelkins/caim_protos/company";
+
+import "google/protobuf/timestamp.proto";
+import "address/address.proto";
+
+
+// Companies (Our Customers)
+message Company {
+    // Unique identifier for the company.
+    int32 company_id = 1;
+    // Name of the company.
+    string company_name = 2;
+    // Address of the company.
+    Address company_address = 3;
+    // Phone number of the company.
+    string company_phone = 4;
+    // Email address of the company.
+    string company_email = 5;
+    // Type of subscription the company has.
+    string subscription_type = 6;
+    // Date when the subscription started.
+    google.protobuf.Timestamp subscription_start_date = 7;
+    // Date when the subscription ends.
+    google.protobuf.Timestamp subscription_end_date = 8;
+    // Date when the company was created.
+    google.protobuf.Timestamp created_at = 12;
+}
+
+service CompanyService {    
+    rpc GetCompany(GetCompanyRequest) returns (Company);    
+    rpc PutCompany(PutCompanyRequest) returns (Company);
+    
+}
+
+// Request message for GetCompany
+message GetCompanyRequest {
+    int32 company_id = 1;
+}
+
+// Request message for PutCompany
+message PutCompanyRequest {
+    Company company = 1;
+}
