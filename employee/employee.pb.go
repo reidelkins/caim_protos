@@ -147,6 +147,262 @@ func (x *Employee) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
+type GetEmployeeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EmployeeId    int32                  `protobuf:"varint,1,opt,name=employee_id,json=employeeId,proto3" json:"employee_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEmployeeRequest) Reset() {
+	*x = GetEmployeeRequest{}
+	mi := &file_employee_employee_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEmployeeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEmployeeRequest) ProtoMessage() {}
+
+func (x *GetEmployeeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_employee_employee_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEmployeeRequest.ProtoReflect.Descriptor instead.
+func (*GetEmployeeRequest) Descriptor() ([]byte, []int) {
+	return file_employee_employee_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *GetEmployeeRequest) GetEmployeeId() int32 {
+	if x != nil {
+		return x.EmployeeId
+	}
+	return 0
+}
+
+type GetEmployeeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Employee      *Employee              `protobuf:"bytes,1,opt,name=employee,proto3" json:"employee,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEmployeeResponse) Reset() {
+	*x = GetEmployeeResponse{}
+	mi := &file_employee_employee_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEmployeeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEmployeeResponse) ProtoMessage() {}
+
+func (x *GetEmployeeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_employee_employee_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEmployeeResponse.ProtoReflect.Descriptor instead.
+func (*GetEmployeeResponse) Descriptor() ([]byte, []int) {
+	return file_employee_employee_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *GetEmployeeResponse) GetEmployee() *Employee {
+	if x != nil {
+		return x.Employee
+	}
+	return nil
+}
+
+type PutEmployeeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Employee      *Employee              `protobuf:"bytes,1,opt,name=employee,proto3" json:"employee,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PutEmployeeRequest) Reset() {
+	*x = PutEmployeeRequest{}
+	mi := &file_employee_employee_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PutEmployeeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PutEmployeeRequest) ProtoMessage() {}
+
+func (x *PutEmployeeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_employee_employee_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PutEmployeeRequest.ProtoReflect.Descriptor instead.
+func (*PutEmployeeRequest) Descriptor() ([]byte, []int) {
+	return file_employee_employee_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *PutEmployeeRequest) GetEmployee() *Employee {
+	if x != nil {
+		return x.Employee
+	}
+	return nil
+}
+
+type PutEmployeeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Employee      *Employee              `protobuf:"bytes,1,opt,name=employee,proto3" json:"employee,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PutEmployeeResponse) Reset() {
+	*x = PutEmployeeResponse{}
+	mi := &file_employee_employee_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PutEmployeeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PutEmployeeResponse) ProtoMessage() {}
+
+func (x *PutEmployeeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_employee_employee_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PutEmployeeResponse.ProtoReflect.Descriptor instead.
+func (*PutEmployeeResponse) Descriptor() ([]byte, []int) {
+	return file_employee_employee_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *PutEmployeeResponse) GetEmployee() *Employee {
+	if x != nil {
+		return x.Employee
+	}
+	return nil
+}
+
+type DeleteEmployeeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EmployeeId    int32                  `protobuf:"varint,1,opt,name=employee_id,json=employeeId,proto3" json:"employee_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteEmployeeRequest) Reset() {
+	*x = DeleteEmployeeRequest{}
+	mi := &file_employee_employee_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteEmployeeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteEmployeeRequest) ProtoMessage() {}
+
+func (x *DeleteEmployeeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_employee_employee_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteEmployeeRequest.ProtoReflect.Descriptor instead.
+func (*DeleteEmployeeRequest) Descriptor() ([]byte, []int) {
+	return file_employee_employee_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *DeleteEmployeeRequest) GetEmployeeId() int32 {
+	if x != nil {
+		return x.EmployeeId
+	}
+	return 0
+}
+
+type DeleteEmployeeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteEmployeeResponse) Reset() {
+	*x = DeleteEmployeeResponse{}
+	mi := &file_employee_employee_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteEmployeeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteEmployeeResponse) ProtoMessage() {}
+
+func (x *DeleteEmployeeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_employee_employee_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteEmployeeResponse.ProtoReflect.Descriptor instead.
+func (*DeleteEmployeeResponse) Descriptor() ([]byte, []int) {
+	return file_employee_employee_proto_rawDescGZIP(), []int{6}
+}
+
 var File_employee_employee_proto protoreflect.FileDescriptor
 
 const file_employee_employee_proto_rawDesc = "" +
@@ -168,7 +424,24 @@ const file_employee_employee_proto_rawDesc = "" +
 	"created_at\x18\n" +
 	" \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB,Z*github.com/reidelkins/caim_protos/employeeb\x06proto3"
+	"updated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"5\n" +
+	"\x12GetEmployeeRequest\x12\x1f\n" +
+	"\vemployee_id\x18\x01 \x01(\x05R\n" +
+	"employeeId\"@\n" +
+	"\x13GetEmployeeResponse\x12)\n" +
+	"\bemployee\x18\x01 \x01(\v2\r.crm.EmployeeR\bemployee\"?\n" +
+	"\x12PutEmployeeRequest\x12)\n" +
+	"\bemployee\x18\x01 \x01(\v2\r.crm.EmployeeR\bemployee\"@\n" +
+	"\x13PutEmployeeResponse\x12)\n" +
+	"\bemployee\x18\x01 \x01(\v2\r.crm.EmployeeR\bemployee\"8\n" +
+	"\x15DeleteEmployeeRequest\x12\x1f\n" +
+	"\vemployee_id\x18\x01 \x01(\x05R\n" +
+	"employeeId\"\x18\n" +
+	"\x16DeleteEmployeeResponse2\xe0\x01\n" +
+	"\x0fEmployeeService\x12@\n" +
+	"\vGetEmployee\x12\x17.crm.GetEmployeeRequest\x1a\x18.crm.GetEmployeeResponse\x12@\n" +
+	"\vPutEmployee\x12\x17.crm.PutEmployeeRequest\x1a\x18.crm.PutEmployeeResponse\x12I\n" +
+	"\x0eDeleteEmployee\x12\x1a.crm.DeleteEmployeeRequest\x1a\x1b.crm.DeleteEmployeeResponseB,Z*github.com/reidelkins/caim_protos/employeeb\x06proto3"
 
 var (
 	file_employee_employee_proto_rawDescOnce sync.Once
@@ -182,19 +455,34 @@ func file_employee_employee_proto_rawDescGZIP() []byte {
 	return file_employee_employee_proto_rawDescData
 }
 
-var file_employee_employee_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_employee_employee_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_employee_employee_proto_goTypes = []any{
-	(*Employee)(nil),              // 0: crm.Employee
-	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
+	(*Employee)(nil),               // 0: crm.Employee
+	(*GetEmployeeRequest)(nil),     // 1: crm.GetEmployeeRequest
+	(*GetEmployeeResponse)(nil),    // 2: crm.GetEmployeeResponse
+	(*PutEmployeeRequest)(nil),     // 3: crm.PutEmployeeRequest
+	(*PutEmployeeResponse)(nil),    // 4: crm.PutEmployeeResponse
+	(*DeleteEmployeeRequest)(nil),  // 5: crm.DeleteEmployeeRequest
+	(*DeleteEmployeeResponse)(nil), // 6: crm.DeleteEmployeeResponse
+	(*timestamppb.Timestamp)(nil),  // 7: google.protobuf.Timestamp
 }
 var file_employee_employee_proto_depIdxs = []int32{
-	1, // 0: crm.Employee.created_at:type_name -> google.protobuf.Timestamp
-	1, // 1: crm.Employee.updated_at:type_name -> google.protobuf.Timestamp
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	7, // 0: crm.Employee.created_at:type_name -> google.protobuf.Timestamp
+	7, // 1: crm.Employee.updated_at:type_name -> google.protobuf.Timestamp
+	0, // 2: crm.GetEmployeeResponse.employee:type_name -> crm.Employee
+	0, // 3: crm.PutEmployeeRequest.employee:type_name -> crm.Employee
+	0, // 4: crm.PutEmployeeResponse.employee:type_name -> crm.Employee
+	1, // 5: crm.EmployeeService.GetEmployee:input_type -> crm.GetEmployeeRequest
+	3, // 6: crm.EmployeeService.PutEmployee:input_type -> crm.PutEmployeeRequest
+	5, // 7: crm.EmployeeService.DeleteEmployee:input_type -> crm.DeleteEmployeeRequest
+	2, // 8: crm.EmployeeService.GetEmployee:output_type -> crm.GetEmployeeResponse
+	4, // 9: crm.EmployeeService.PutEmployee:output_type -> crm.PutEmployeeResponse
+	6, // 10: crm.EmployeeService.DeleteEmployee:output_type -> crm.DeleteEmployeeResponse
+	8, // [8:11] is the sub-list for method output_type
+	5, // [5:8] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_employee_employee_proto_init() }
@@ -208,9 +496,9 @@ func file_employee_employee_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_employee_employee_proto_rawDesc), len(file_employee_employee_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   7,
 			NumExtensions: 0,
-			NumServices:   0,
+			NumServices:   1,
 		},
 		GoTypes:           file_employee_employee_proto_goTypes,
 		DependencyIndexes: file_employee_employee_proto_depIdxs,
