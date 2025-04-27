@@ -2,7 +2,6 @@ syntax = "proto3";
 package crm;
 
 option go_package = "github.com/reidelkins/caim_protos/employee";
-
 import "google/protobuf/timestamp.proto";
 
 // Employees (of Our Customers)
@@ -18,4 +17,33 @@ message Employee {
     bool is_active = 9;
     google.protobuf.Timestamp created_at = 10;
     google.protobuf.Timestamp updated_at = 11;
+}
+
+message GetEmployeeRequest {
+    int32 employee_id = 1;
+}
+
+message GetEmployeeResponse {
+    Employee employee = 1;
+}
+
+message PutEmployeeRequest {
+    Employee employee = 1;
+}
+
+message PutEmployeeResponse {
+    Employee employee = 1;
+}
+
+message DeleteEmployeeRequest {
+    int32 employee_id = 1;
+}
+
+message DeleteEmployeeResponse {
+}
+
+service EmployeeService {
+    rpc GetEmployee(GetEmployeeRequest) returns (GetEmployeeResponse);
+    rpc PutEmployee(PutEmployeeRequest) returns (PutEmployeeResponse);
+    rpc DeleteEmployee(DeleteEmployeeRequest) returns (DeleteEmployeeResponse);
 }

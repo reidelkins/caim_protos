@@ -1,15 +1,15 @@
 syntax = "proto3";
-
 package crm;
+
 option go_package = "github.com/reidelkins/caim_protos/customer";
 
 import "google/protobuf/timestamp.proto";
 
 message Customer {
     int32 customer_id = 1;
-    int32 company_id = 2; 
+    int32 company_id = 2;
     string first_name = 3;
-    string last_name = 4;    
+    string last_name = 4;
     string address = 5;
     string city = 6;
     string state = 7;
@@ -20,4 +20,33 @@ message Customer {
     string status = 12;
     google.protobuf.Timestamp created_at = 13;
     google.protobuf.Timestamp updated_at = 14;
+}
+
+message GetCustomerRequest {
+    int32 customer_id = 1;
+}
+
+message GetCustomerResponse {
+    Customer customer = 1;
+}
+
+message PutCustomerRequest {
+    Customer customer = 1;
+}
+
+message PutCustomerResponse {
+    Customer customer = 1;
+}
+
+message DeleteCustomerRequest {
+    int32 customer_id = 1;
+}
+
+message DeleteCustomerResponse {
+}
+
+service CustomerService {
+    rpc GetCustomer(GetCustomerRequest) returns (GetCustomerResponse);
+    rpc PutCustomer(PutCustomerRequest) returns (PutCustomerResponse);
+    rpc DeleteCustomer(DeleteCustomerRequest) returns (DeleteCustomerResponse);
 }
